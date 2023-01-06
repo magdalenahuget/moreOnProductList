@@ -4,12 +4,7 @@ import { products } from '/data.js';
 
 const divElement = function (content) {
 
-    let result = "";
-        if (content.price > 1000) {
-            result += `${content.name}<br />`;
-        }
-
-    return `<div>${result}</div>`;
+    return `<div>${content.name}</div>`;
 }
 
 
@@ -29,6 +24,3 @@ const loadEvent = function () {
 }
 
 window.addEventListener("load", loadEvent);
-
-
-
