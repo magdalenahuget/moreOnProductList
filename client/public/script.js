@@ -1,18 +1,29 @@
 import { products } from '/data.js';
 
+// TASK 1 - Rearrange by price
 
 const divElement = function (content) {
-    
-    return `<div>${x}</div>`;
+
+    let result = "";
+        if (content.price > 1000) {
+            result += `${content.name}<br />`;
+        }
+
+    return `<div>${result}</div>`;
 }
-
-
 
 
 const loadEvent = function () {
 
     // Write your JavaScript code after this line
-    
+    products.sort((a, b) => (a.price > b.price) ? 1 : -1);
+
+    let rootElement = document.getElementById("root");
+
+    products.forEach((product) => {
+        rootElement.insertAdjacentHTML("beforeend", divElement(product));
+    })
+
     // Write your JavaScript code before this line
 
 }
